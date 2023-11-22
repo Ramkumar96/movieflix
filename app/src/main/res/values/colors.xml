@@ -2,4 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="green">#ff669900</color>
+    <color name="movieflixred">#c1071e</color>
+    <color name="movieflixDarkBlue">#131834</color>
+    <color name="movieflixGrey">#dedede</color>
+    <color name="movieflixredDarkGrey">#43465e</color>
 </resources>
