@@ -1,0 +1,362 @@
+[
+  {
+    "movieID": 1,
+    "movieTitle": "Star Wars: Episode V - The Empire Strikes Back",
+    "studio": "Twentieth Century Fox",
+    "criticsRating": 8.7
+  },
+  {
+    "movieID": 2,
+    "movieTitle": "The Matrix",
+    "studio": "Warner Bros. Pictures",
+    "criticsRating": 8.7
+  },
+  {
+    "movieID": 3,
+    "movieTitle": "Star Wars: Episode IV - A New Hope",
+    "studio": "Twentieth Century Fox",
+    "criticsRating": 8.6
+  },
+  {
+    "movieID": 4,
+    "movieTitle": "Star Wars: Episode IV - A New Hope",
+    "studio": "Twentieth Century Fox",
+    "criticsRating": 8.6
+  },
+  {
+    "movieID": 5,
+    "movieTitle": "Alien",
+    "studio": "Twentieth Century Fox",
+    "criticsRating": 8.5
+  },
+  {
+    "movieID": 6,
+    "movieTitle": "Raiders of the Lost Ark",
+    "studio": "Paramount Pictures",
+    "criticsRating": 8.4
+  },
+  {
+    "movieID": 7,
+    "movieTitle": "Blade Runner",
+    "studio": "Warner Bros. Pictures",
+    "criticsRating": 8.1
+  },
+  {
+    "movieID": 8,
+    "movieTitle": "The Terminator",
+    "studio": "Orion Pictures",
+    "criticsRating": 8.1
+  },
+  {
+    "movieID": 9,
+    "movieTitle": "The Princess Bride",
+    "studio": "Twentieth Century Fox",
+    "criticsRating": 8
+  },
+  {
+    "movieID": 10,
+    "movieTitle": "Star Trek II: The Wrath of Khan",
+    "studio": "Paramount Pictures",
+    "criticsRating": 7.7
+  },
+  {
+    "movieID": 11,
+    "movieTitle": "The Departed",
+    "studio": "Warner Bros. Pictures",
+    "criticsRating": 8.5
+  },
+  {
+    "movieID": 12,
+    "movieTitle": "Se7en",
+    "studio": "New Line Cinema",
+    "criticsRating": 8.6
+  },
+  {
+    "movieID": 13,
+    "movieTitle": "Heat",
+    "studio": "Warner Bros. Pictures",
+    "criticsRating": 8.2
+  },
+  {
+    "movieID": 14,
+    "movieTitle": "Prisoners",
+    "studio": "Warner Bros. Pictures",
+    "criticsRating": 8.1
+  },
+  {
+    "movieID": 15,
+    "movieTitle": "Gone Girl",
+    "studio": "20th Century Fox",
+    "criticsRating": 8.1
+  },
+  {
+    "movieID": 16,
+    "movieTitle": "The Girl with the Dragon Tattoo",
+    "studio": "Columbia Pictures",
+    "criticsRating": 7.8
+  },
+  {
+    "movieID": 17,
+    "movieTitle": "The Silence of the Lambs",
+    "studio": "Orion Pictures",
+    "criticsRating": 8.6
+  },
+  {
+    "movieID": 18,
+    "movieTitle": "Zodiac",
+    "studio": "Paramount Pictures",
+    "criticsRating": 7.7
+  },
+  {
+    "movieID": 19,
+    "movieTitle": "Mystic River",
+    "studio": "Warner Bros. Pictures",
+    "criticsRating": 8
+  },
+  {
+    "movieID": 20,
+    "movieTitle": "The Usual Suspects",
+    "studio": "Gramercy Pictures",
+    "criticsRating": 8.6
+  },
+  {
+    "movieID": 21,
+    "movieTitle": "The Avengers",
+    "studio": "Marvel Studios",
+    "criticsRating": 7.5
+  },
+  {
+    "movieID": 22,
+    "movieTitle": "Guardians of the Galaxy",
+    "studio": "Marvel Studios",
+    "criticsRating": 8.3
+  },
+  {
+    "movieID": 23,
+    "movieTitle": "Deadpool",
+    "studio": "20th Century Fox",
+    "criticsRating": 7.9
+  },
+  {
+    "movieID": 24,
+    "movieTitle": "Thor: Ragnarok",
+    "studio": "Marvel Studios",
+    "criticsRating": 9.2
+  },
+  {
+    "movieID": 25,
+    "movieTitle": "Wonder Woman",
+    "studio": "Warner Bros. Pictures",
+    "criticsRating": 9.7
+  },
+  {
+    "movieID": 26,
+    "movieTitle": "Ant-Man",
+    "studio": "Marvel Studios",
+    "criticsRating": 8.8
+  },
+  {
+    "movieID": 27,
+    "movieTitle": "Iron Man 2",
+    "studio": "Marvel Studios",
+    "criticsRating": 6.4
+  },
+  {
+    "movieID": 28,
+    "movieTitle": "The Dark Knight Rises",
+    "studio": "Warner Bros. Pictures",
+    "criticsRating": 7.7
+  },
+  {
+    "movieID": 29,
+    "movieTitle": "Spider-Man: Homecoming",
+    "studio": "Columbia Pictures",
+    "criticsRating": 6.6
+  },
+  {
+    "movieID": 30,
+    "movieTitle": "Black Panther",
+    "studio": "Marvel Studios",
+    "criticsRating": 9.1
+  },
+  {
+    "movieID": 31,
+    "movieTitle": "Whiplash",
+    "studio": "Bold Films",
+    "criticsRating": 8.5
+  },
+  {
+    "movieID": 32,
+    "movieTitle": "City Lights",
+    "studio": "United Artists",
+    "criticsRating": 8.5
+  },
+  {
+    "movieID": 33,
+    "movieTitle": "Aliens",
+    "studio": "Twentieth Century Fox, Brandywine Productions, Pinewood Studios",
+    "criticsRating": 8.4
+  },
+  {
+    "movieID": 34,
+    "movieTitle": "The Sting",
+    "studio": "Twentieth Century Fox",
+    "criticsRating": 8.3
+  },
+  {
+    "movieID": 35,
+    "movieTitle": "Spider-Man: No Way Home",
+    "studio": "Marvel Studios",
+    "criticsRating": 8.2
+  },
+  {
+    "movieID": 36,
+    "movieTitle": "Tokyo Story",
+    "studio": "Marvel Studios",
+    "criticsRating": 8
+  },
+  {
+    "movieID": 37,
+    "movieTitle": "Warrior",
+    "studio": "Mimran Schur Pictures",
+    "criticsRating": 8
+  },
+  {
+    "movieID": 38,
+    "movieTitle": "Gran Torino",
+    "studio": "Gerber Pictures",
+    "criticsRating": 8.1
+  },
+  {
+    "movieID": 39,
+    "movieTitle": "Oppenheimer",
+    "studio": "Gadget Films",
+    "criticsRating": 8.6
+  },
+  {
+    "movieID": 40,
+    "movieTitle": "The Covenant",
+    "studio": "Gadget Films",
+    "criticsRating": 7.5
+  },
+  {
+    "movieID": 41,
+    "movieTitle": "Whiplash",
+    "studio": "Bold Films",
+    "criticsRating": 8.5
+  },
+  {
+    "movieID": 42,
+    "movieTitle": "City Lights",
+    "studio": "United Artists",
+    "criticsRating": 8.5
+  },
+  {
+    "movieID": 43,
+    "movieTitle": "Aliens",
+    "studio": "Twentieth Century Fox, Brandywine Productions, Pinewood Studios",
+    "criticsRating": 8.4
+  },
+  {
+    "movieID": 44,
+    "movieTitle": "The Sting",
+    "studio": "Twentieth Century Fox",
+    "criticsRating": 8.3
+  },
+  {
+    "movieID": 45,
+    "movieTitle": "Spider-Man: No Way Home",
+    "studio": "Marvel Studios",
+    "criticsRating": 8.2
+  },
+  {
+    "movieID": 46,
+    "movieTitle": "Tokyo Story",
+    "studio": "Marvel Studios",
+    "criticsRating": 8
+  },
+  {
+    "movieID": 47,
+    "movieTitle": "Warrior",
+    "studio": "Mimran Schur Pictures",
+    "criticsRating": 8
+  },
+  {
+    "movieID": 48,
+    "movieTitle": "Gran Torino",
+    "studio": "Gerber Pictures",
+    "criticsRating": 8.1
+  },
+  {
+    "movieID": 49,
+    "movieTitle": "Oppenheimer",
+    "studio": "Gadget Films",
+    "criticsRating": 8.6
+  },
+  {
+    "movieID": 50,
+    "movieTitle": "The Covenant",
+    "studio": "Gadget Films",
+    "criticsRating": 7.5
+  },
+  {
+    "movieID": 51,
+    "movieTitle": "Whiplash",
+    "studio": "Bold Films",
+    "criticsRating": 8.5
+  },
+  {
+    "movieID": 52,
+    "movieTitle": "City Lights",
+    "studio": "United Artists",
+    "criticsRating": 8.5
+  },
+  {
+    "movieID": 53,
+    "movieTitle": "Aliens",
+    "studio": "Twentieth Century Fox, Brandywine Productions, Pinewood Studios",
+    "criticsRating": 8.4
+  },
+  {
+    "movieID": 54,
+    "movieTitle": "The Sting",
+    "studio": "Twentieth Century Fox",
+    "criticsRating": 8.3
+  },
+  {
+    "movieID": 55,
+    "movieTitle": "Spider-Man: No Way Home",
+    "studio": "Marvel Studios",
+    "criticsRating": 8.2
+  },
+  {
+    "movieID": 56,
+    "movieTitle": "Tokyo Story",
+    "studio": "Marvel Studios",
+    "criticsRating": 8
+  },
+  {
+    "movieID": 57,
+    "movieTitle": "Warrior",
+    "studio": "Mimran Schur Pictures",
+    "criticsRating": 8
+  },
+  {
+    "movieID": 58,
+    "movieTitle": "Gran Torino",
+    "studio": "Gerber Pictures",
+    "criticsRating": 8.1
+  },
+  {
+    "movieID": 59,
+    "movieTitle": "Oppenheimer",
+    "studio": "Gadget Films",
+    "criticsRating": 8.6
+  },
+  {
+    "movieID": 60,
+    "movieTitle": "The Covenant",
+    "studio": "Gadget Films",
+    "criticsRating": 7.5
+  }
+]

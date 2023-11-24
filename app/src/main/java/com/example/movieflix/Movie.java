@@ -21,8 +21,7 @@ public class Movie {
 
     // Constructor
 
-    public Movie(int movieID, String movieTitle, String studio, int criticsRating) {
-        this.movieID = movieID;
+    public Movie(String movieTitle, String studio, int criticsRating) {
         this.movieTitle = movieTitle;
         this.studio = studio;
         this.criticsRating = criticsRating;

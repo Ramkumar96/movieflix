@@ -1,15 +1,36 @@
 package com.example.movieflix;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
+import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 public class AddMovieActivity extends AppCompatActivity {
+
+
+    EditText movieTitleText, movieStudioText, movieRatingText;
+
+    TextView messageLabel;
+    Button addButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +43,20 @@ public class AddMovieActivity extends AppCompatActivity {
         TextView toolbarText = findViewById(R.id.toolbar_text);
         toolbarText.setText("Add Movie");
 
+        movieTitleText = findViewById(R.id.add_movieTitle);
+        movieStudioText = findViewById(R.id.add_movieStudio);
+        movieRatingText = findViewById(R.id.add_movieRating);
+        messageLabel = findViewById(R.id.messagelabel);
+        addButton = findViewById(R.id.add_movie_btn);
+
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new bgThread().start();
+            }
+        });
+
+
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,5 +64,24 @@ public class AddMovieActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
+
+    class bgThread extends Thread {
+        public void run() {
+            super.run();
+            MovieDatabase db = Room.databaseBuilder(getApplicationContext(),
+                    MovieDatabase.class, "room_db").build();
+            MovieDao movieDao = db.movieDao();
+            movieDao.insertRecord(new Movie(movieTitleText.getText().toString(), movieStudioText.getText().toString(),
+                    Integer.parseInt(movieRatingText.getText().toString())));
+            movieTitleText.setText("");
+            movieStudioText.setText("");
+            movieRatingText.setText("");
+//            Toast.makeText(getApplicationContext(), "Inserted Successfully" ,Toast.LENGTH_SHORT).show();
+            messageLabel.setText("Inserted Successfully");
+
+        }
+    }
+
 }
