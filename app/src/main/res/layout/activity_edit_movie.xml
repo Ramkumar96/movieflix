@@ -45,78 +45,62 @@
                     android:textColor="@color/movieflixred" />
 
                 <TextView
-                    android:id="@+id/task_text_label"
+                    android:id="@+id/title_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
-                    android:text="Add New task" />
+                    android:text="Title" />
 
                 <EditText
-                    android:id="@+id/add_task"
+                    android:id="@+id/edit_movieTitle"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:background="@drawable/custom_edittext"
                     android:drawablePadding="8dp"
-                    android:hint="Task"
+                    android:hint="Enter Movie Title"
                     android:padding="8dp"
                     android:textColor="@color/black" />
 
                 <TextView
-                    android:id="@+id/task_text_label2"
+                    android:id="@+id/studio_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
-                    android:text="Add Tag" />
+                    android:text="Studio" />
 
                 <EditText
-                    android:id="@+id/task_tag"
+                    android:id="@+id/edit_movieStudio"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:background="@drawable/custom_edittext"
                     android:drawablePadding="8dp"
-                    android:hint="Tag"
+                    android:hint="Enter Studio Name"
                     android:padding="8dp"
                     android:textColor="@color/black" />
 
                 <TextView
-                    android:id="@+id/task_status_label"
+                    android:id="@+id/rating_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="Select Task Status" />
+                    android:layout_marginTop="30dp"
+                    android:text="Critics Rating" />
 
-                <Spinner
-                    android:id="@+id/taskStatusSpinner"
+                <EditText
+                    android:id="@+id/edit_movieRating"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:background="@drawable/custom_edittext"
                     android:drawablePadding="8dp"
-                    android:hint="Select Task status"
+                    android:hint="Enter Critics Rating"
                     android:padding="8dp"
                     android:textColor="@color/black" />
 
-                <TextView
-                    android:id="@+id/task_priority_label"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="Select Task Priority" />
 
-                <Spinner
-                    android:id="@+id/taskPrioritySpinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@drawable/custom_edittext"
-                    android:drawablePadding="8dp"
-                    android:hint="Select Task priority"
-                    android:padding="8dp"
-                    android:textColor="@color/black" />
-
-                <androidx.appcompat.widget.AppCompatButton
+                <Button
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:text="Edit Movie"
-                    android:id="@+id/signup_button"
+                    android:id="@+id/edit_movie_btn"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:layout_marginTop="30dp"
