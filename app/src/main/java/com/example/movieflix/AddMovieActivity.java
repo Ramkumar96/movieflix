@@ -5,8 +5,10 @@ import androidx.room.Room;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +33,11 @@ public class AddMovieActivity extends AppCompatActivity {
     TextView messageLabel, dataSet;
     Button addButton, fetchButton;
 
+    ImageView movieImage;
+
+    private static final int PICK_IMAGE_REQUEST = 1;
+    private String imagePath;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,48 +57,75 @@ public class AddMovieActivity extends AppCompatActivity {
         addButton = findViewById(R.id.add_movie_btn);
 //        fetchButton = findViewById(R.id.fetchDataBtn);
         dataSet = findViewById(R.id.dataholder);
+        movieImage = findViewById(R.id.add_movieImage);
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new bgThread().start();
+                insertMovie();
+            }
+        });
+
+        movieImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                chooseImage();
             }
         });
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(AddMovieActivity.this, MainActivity.class);
-//                startActivity(intent);
-                new bgThread().start();
+                Intent intent = new Intent(AddMovieActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 
     }
 
-    class bgThread extends Thread {
-        public void run() {
-            super.run();
-            MovieDatabase db = Room.databaseBuilder(getApplicationContext(),
-                    MovieDatabase.class, "movieDB").allowMainThreadQueries().build();
-            MovieDao movieDao = db.movieDao();
-            movieDao.insertRecord(new Movie(movieTitleText.getText().toString(), movieStudioText.getText().toString(),
-                    Integer.parseInt(movieRatingText.getText().toString())));
-            movieTitleText.setText("");
-            movieStudioText.setText("");
-            movieRatingText.setText("");
+    private void chooseImage() {
+        Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(intent, PICK_IMAGE_REQUEST);
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
-            // Update UI on the main thread
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    // Show toast message
-                    Toast.makeText(AddMovieActivity.this, "Movie Inserted Successfully", Toast.LENGTH_SHORT).show();
-                }
-            });
-
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
+            Uri imageUri = data.getData();
+            movieImage.setImageURI(imageUri);
+            imagePath = imageUri.toString(); // Store the image path
         }
+    }
+
+    private void insertMovie() {
+        String title = movieTitleText.getText().toString();
+        String studio = movieStudioText.getText().toString();
+        int rating = Integer.parseInt(movieRatingText.getText().toString());
+
+        // Ensure imagePath (movieImage) is not empty
+        if (title.isEmpty() || studio.isEmpty() || imagePath.isEmpty() || movieRatingText.getText().toString().isEmpty()) {
+            Toast.makeText(this, "Please fill in all details", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Insert movie into Room database
+        MovieDatabase db = Room.databaseBuilder(getApplicationContext(),
+                MovieDatabase.class, "movieDB").allowMainThreadQueries().build();
+        MovieDao movieDao = db.movieDao();
+
+        Movie newMovie = new Movie(title, studio, rating, imagePath);
+        newMovie.movieImage = imagePath; // Set the image path
+        movieDao.insertRecord(newMovie);
+
+        // Clear input fields after insertion
+        movieTitleText.setText("");
+        movieStudioText.setText("");
+        movieRatingText.setText("");
+        movieImage.setImageResource(R.drawable.ic_launcher_foreground);
+
+        Toast.makeText(this, "Movie Inserted Successfully", Toast.LENGTH_SHORT).show();
     }
 
 }

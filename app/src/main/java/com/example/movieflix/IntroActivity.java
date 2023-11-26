@@ -22,7 +22,7 @@ public class IntroActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Create an Intent to start the MainActivity
-                Intent intent = new Intent(IntroActivity.this, MainActivity.class);
+                Intent intent = new Intent(IntroActivity.this, AddMovieActivity.class);
                 startActivity(intent);
             }
         });

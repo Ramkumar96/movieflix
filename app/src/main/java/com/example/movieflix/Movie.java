@@ -19,12 +19,16 @@ public class Movie {
     @ColumnInfo(name = "criticsRating")
     public int criticsRating;
 
-    // Constructor
+    @ColumnInfo(name = "movieImage")
+    public String movieImage;
 
-    public Movie(String movieTitle, String studio, int criticsRating) {
+// Constructor
+
+    public Movie(String movieTitle, String studio, int criticsRating, String movieImage) {
         this.movieTitle = movieTitle;
         this.studio = studio;
         this.criticsRating = criticsRating;
+        this.movieImage = movieImage;
     }
 
 
@@ -60,6 +64,14 @@ public class Movie {
 
     public void setCriticsRating(int criticsRating) {
         this.criticsRating = criticsRating;
+    }
+
+    public String getMovieImage() {
+        return movieImage;
+    }
+
+    public void setMovieImage(String movieImage) {
+        this.movieImage = movieImage;
     }
 }
 
