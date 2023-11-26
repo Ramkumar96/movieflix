@@ -24,8 +24,8 @@ public interface MovieDao {
             "studio LIKE :studio_name LIMIT 1")
     Movie findByName(String title, String studio_name);
 
-//    @Query("SELECT EXISTS (SELECT * FROM movie WHERE movieID = :movieIds)")
-//    Boolean is_exists(int movieIds);
+    @Query("UPDATE movie SET movieTitle = :mTitle, studio = :mStudio, criticsRating = :mRating WHERE movieID = :movieId")
+    void updateById(int movieId, String mTitle, String mStudio, int mRating);
 
     @Insert
     void insertAll(List<Movie> movies);

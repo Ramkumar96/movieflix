@@ -1,5 +1,6 @@
 package com.example.movieflix;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,12 +54,17 @@ public class myadapter extends RecyclerView.Adapter<myadapter.myviewholder>{
         });
 
         // Edit Btn
-//        holder.recEditBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
+        holder.recEditBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(new Intent(holder.recEditBtn.getContext(), EditMovieActivity.class));
+                intent.putExtra("uMovieId", String.valueOf(movies.get(position).getMovieID()));
+                intent.putExtra("uMovieTitle", movies.get(position).getMovieTitle());
+                intent.putExtra("uMovieStudio", movies.get(position).getStudio());
+                intent.putExtra("uMovieRating", String.valueOf(movies.get(position).getCriticsRating()));
+                holder.recEditBtn.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -78,6 +84,7 @@ public class myadapter extends RecyclerView.Adapter<myadapter.myviewholder>{
             recMovieStudio = itemView.findViewById(R.id.recMovieStudio);
             recMovieRatings = itemView.findViewById(R.id.recMovieRatings);
             recDeleteBtn = itemView.findViewById(R.id.recDeleteBtn);
+            recEditBtn = itemView.findViewById(R.id.recEditBtn);
 
 
         }
