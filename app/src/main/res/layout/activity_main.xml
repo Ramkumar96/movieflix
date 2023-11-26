@@ -88,6 +88,21 @@
                     app:layout_constraintStart_toStartOf="parent">
 
 
+                    <!-- Demo Section START -->
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fetch Data"
+                        android:id="@+id/fetchDataBtn"
+                        android:layout_marginTop="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="25sp"
+                        android:id="@+id/dataholder" />
+                    <!-- Demo Section END -->
+
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/tasksRecyclerView"
@@ -99,6 +114,21 @@
                         android:paddingStart="24dp"
                         android:paddingEnd="24dp"
                         android:layout_weight="1" />
+
+<!--                    &lt;!&ndash; Demo Section START &ndash;&gt;-->
+<!--                    <Button-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Fetch Data"-->
+<!--                        android:id="@+id/fetchDataBtn"-->
+<!--                        android:layout_marginTop="20dp" />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:textSize="25sp"-->
+<!--                        android:id="@+id/dataholder" />-->
+<!--                    &lt;!&ndash; Demo Section END&ndash;&gt;-->
 
 
                 </LinearLayout>

@@ -14,8 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+/*import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;*/
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -28,8 +28,8 @@ public class AddMovieActivity extends AppCompatActivity {
 
     EditText movieTitleText, movieStudioText, movieRatingText;
 
-    TextView messageLabel;
-    Button addButton;
+    TextView messageLabel, dataSet;
+    Button addButton, fetchButton;
 
 
     @Override
@@ -48,6 +48,8 @@ public class AddMovieActivity extends AppCompatActivity {
         movieRatingText = findViewById(R.id.add_movieRating);
         messageLabel = findViewById(R.id.messagelabel);
         addButton = findViewById(R.id.add_movie_btn);
+        fetchButton = findViewById(R.id.fetchDataBtn);
+        dataSet = findViewById(R.id.dataholder);
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,12 +58,12 @@ public class AddMovieActivity extends AppCompatActivity {
             }
         });
 
-
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AddMovieActivity.this, MainActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(AddMovieActivity.this, MainActivity.class);
+//                startActivity(intent);
+                new bgThread().start();
             }
         });
 
@@ -71,13 +73,15 @@ public class AddMovieActivity extends AppCompatActivity {
         public void run() {
             super.run();
             MovieDatabase db = Room.databaseBuilder(getApplicationContext(),
-                    MovieDatabase.class, "room_db").build();
+                    MovieDatabase.class, "movieDB").allowMainThreadQueries().build();
             MovieDao movieDao = db.movieDao();
             movieDao.insertRecord(new Movie(movieTitleText.getText().toString(), movieStudioText.getText().toString(),
                     Integer.parseInt(movieRatingText.getText().toString())));
             movieTitleText.setText("");
             movieStudioText.setText("");
             movieRatingText.setText("");
+
+//            Toast.makeText(AddMovieActivity.this, "Movie Inserted Successful", Toast.LENGTH_LONG).show();
 //            Toast.makeText(getApplicationContext(), "Inserted Successfully" ,Toast.LENGTH_SHORT).show();
             messageLabel.setText("Inserted Successfully");
 

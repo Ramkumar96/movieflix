@@ -14,6 +14,9 @@ public interface MovieDao {
     @Query("SELECT * FROM movie")
     List<Movie> getAll();
 
+    @Query("DELETE FROM movie WHERE movieID = :movieId")
+    void deleteById(int movieId);
+
     @Query("SELECT * FROM movie WHERE movieID IN (:movieIds)")
     List<Movie> loadAllByIds(int[] movieIds);
 
@@ -21,8 +24,8 @@ public interface MovieDao {
             "studio LIKE :studio_name LIMIT 1")
     Movie findByName(String title, String studio_name);
 
-    @Insert
-    void insertMovie(Movie movie);
+//    @Query("SELECT EXISTS (SELECT * FROM movie WHERE movieID = :movieIds)")
+//    Boolean is_exists(int movieIds);
 
     @Insert
     void insertAll(List<Movie> movies);
