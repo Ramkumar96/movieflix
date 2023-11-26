@@ -40,7 +40,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
-                        android:text="Hi, Alex"
+                        android:text="Hi, User"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:textColor="@color/movieflixred"
@@ -89,12 +89,12 @@
 
 
                     <!-- Demo Section START -->
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Fetch Data"
-                        android:id="@+id/fetchDataBtn"
-                        android:layout_marginTop="20dp" />
+<!--                    <Button-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Fetch Data"-->
+<!--                        android:id="@+id/fetchDataBtn"-->
+<!--                        android:layout_marginTop="20dp" />-->
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -105,7 +105,7 @@
 
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/tasksRecyclerView"
+                        android:id="@+id/movieRecyclerView"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         android:nestedScrollingEnabled="true"
                         android:layout_width="match_parent"
@@ -113,6 +113,7 @@
                         android:clipToPadding="false"
                         android:paddingStart="24dp"
                         android:paddingEnd="24dp"
+                        android:paddingBottom="20dp"
                         android:layout_weight="1" />
 
 <!--                    &lt;!&ndash; Demo Section START &ndash;&gt;-->

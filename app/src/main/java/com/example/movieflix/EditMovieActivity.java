@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class EditMovieActivity extends AppCompatActivity {
 
@@ -45,7 +46,10 @@ public class EditMovieActivity extends AppCompatActivity {
                         MovieDatabase.class, "movieDB").allowMainThreadQueries().build();
                 MovieDao movieDao = db.movieDao();
                 movieDao.updateById(uMovieID, uMovieTitle.getText().toString(), uMovieStudio.getText().toString(), Integer.parseInt(uMovieRating.getText().toString()));
-                startActivity(new Intent(getApplicationContext(), FetchData.class));
+
+                Toast.makeText(EditMovieActivity.this, "Movie Updated Successfully", Toast.LENGTH_SHORT).show();
+
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
             }
         });

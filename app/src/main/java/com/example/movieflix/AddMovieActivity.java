@@ -48,7 +48,7 @@ public class AddMovieActivity extends AppCompatActivity {
         movieRatingText = findViewById(R.id.add_movieRating);
         messageLabel = findViewById(R.id.messagelabel);
         addButton = findViewById(R.id.add_movie_btn);
-        fetchButton = findViewById(R.id.fetchDataBtn);
+//        fetchButton = findViewById(R.id.fetchDataBtn);
         dataSet = findViewById(R.id.dataholder);
 
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -81,9 +81,15 @@ public class AddMovieActivity extends AppCompatActivity {
             movieStudioText.setText("");
             movieRatingText.setText("");
 
-//            Toast.makeText(AddMovieActivity.this, "Movie Inserted Successful", Toast.LENGTH_LONG).show();
-//            Toast.makeText(getApplicationContext(), "Inserted Successfully" ,Toast.LENGTH_SHORT).show();
-            messageLabel.setText("Inserted Successfully");
+
+            // Update UI on the main thread
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    // Show toast message
+                    Toast.makeText(AddMovieActivity.this, "Movie Inserted Successfully", Toast.LENGTH_SHORT).show();
+                }
+            });
 
         }
     }
