@@ -1,5 +1,7 @@
 package com.example.movieflix;
 
+import android.graphics.Bitmap;
+
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -19,12 +21,16 @@ public class Movie {
     @ColumnInfo(name = "criticsRating")
     public int criticsRating;
 
+    @ColumnInfo(name = "movieImage")
+    public byte[] movieImage;
+
     // Constructor
 
-    public Movie(String movieTitle, String studio, int criticsRating) {
+    public Movie(String movieTitle, String studio, int criticsRating, byte[] movieImage) {
         this.movieTitle = movieTitle;
         this.studio = studio;
         this.criticsRating = criticsRating;
+        this.movieImage = movieImage;
     }
 
 
@@ -60,6 +66,14 @@ public class Movie {
 
     public void setCriticsRating(int criticsRating) {
         this.criticsRating = criticsRating;
+    }
+
+    public byte[] getMovieImage() {
+        return movieImage;
+    }
+
+    public void setMovieImage(byte[] movieImage) {
+        this.movieImage = movieImage;
     }
 }
 

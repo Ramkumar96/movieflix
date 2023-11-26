@@ -96,6 +96,35 @@
                         android:padding="8dp"
                         android:textColor="@color/black" />
 
+
+                    <TextView
+                        android:id="@+id/image_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="Thumbnail Image" />
+
+
+
+                    <ImageView
+                        android:id="@+id/add_movieImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:scaleType="centerCrop"
+                        android:layout_marginBottom="10dp"
+                        android:src="@drawable/ic_launcher_foreground"
+                        android:onClick="chooseImage"/>
+
+<!--                    <Button-->
+<!--                        android:id="@+id/pickImageButton"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Pick Image"-->
+<!--                        android:layout_below="@id/imageView"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:layout_marginTop="16dp" />-->
+
+
                     <androidx.appcompat.widget.AppCompatButton
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
