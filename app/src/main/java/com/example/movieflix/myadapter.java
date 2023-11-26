@@ -5,11 +5,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
+
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
@@ -65,6 +70,20 @@ public class myadapter extends RecyclerView.Adapter<myadapter.myviewholder>{
                 holder.recEditBtn.getContext().startActivity(intent);
             }
         });
+
+        // Populating Image
+        String imageUrl = movies.get(position).getMovieImage();
+
+        if (imageUrl != null && !imageUrl.isEmpty()) {
+            Glide.with(holder.itemView.getContext())
+                    .load(imageUrl)
+                    .placeholder(R.drawable.movie1) // Placeholder image while loading (if needed)
+                    .error(R.drawable.movie1) // Image to display if loading fails (if needed)
+                    .into(holder.recMovieImage);
+        } else {
+            // Handle cases where the URL is null or empty
+            // You might want to set a default image or hide the ImageView
+        }
     }
 
     @Override
@@ -76,6 +95,8 @@ public class myadapter extends RecyclerView.Adapter<myadapter.myviewholder>{
 
         TextView recMovieID, recMovieTitle, recMovieStudio, recMovieRatings;
         Button recEditBtn, recDeleteBtn;
+
+        ImageView recMovieImage;
         public myviewholder(@NonNull View itemView) {
             super(itemView);
 
@@ -85,6 +106,8 @@ public class myadapter extends RecyclerView.Adapter<myadapter.myviewholder>{
             recMovieRatings = itemView.findViewById(R.id.recMovieRatings);
             recDeleteBtn = itemView.findViewById(R.id.recDeleteBtn);
             recEditBtn = itemView.findViewById(R.id.recEditBtn);
+
+            recMovieImage = itemView.findViewById(R.id.recMovieImage);
 
 
         }
